@@ -7,7 +7,8 @@ import AppLoading from 'expo-app-loading';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    Sf: require('./assets/fonts/SfUI.ttf')
+    Sf: require('./assets/fonts/SfUI.ttf'),
+    Gilroy: require('./assets/fonts/Gilroy.ttf')
   });
 
   if (!fontsLoaded) {
