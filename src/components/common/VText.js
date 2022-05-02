@@ -1,6 +1,6 @@
 import { StyleSheet, Text } from 'react-native';
 import React from 'react';
-import * as colors from '../constants/colors';
+import * as colors from '../../constants/colors';
 
 export default function VText({
   children,
