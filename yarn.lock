@@ -7198,6 +7198,13 @@ react-native-get-random-values@^1.7.2:
   dependencies:
     fast-base64-decode "^1.0.0"
 
+react-native-iconly@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-iconly/-/react-native-iconly-1.0.12.tgz#44e06d45ea52933055b3e16b22ed7f354e618e83"
+  integrity sha512-HwjgSXyJrSk/TcCCbSNCNySWSst4uLInxxjG7vpCKG/zT4I4tYetiLdaFNp/uPcMEb3ZuaQWXJe9H+fMfaKhtA==
+  dependencies:
+    react-native-svg "^12.1.0"
+
 react-native-qrcode-svg@^6.1.2:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/react-native-qrcode-svg/-/react-native-qrcode-svg-6.1.2.tgz#a7cb6c10199ab01418a7f7700ce17a6a014f544e"
@@ -7222,7 +7229,7 @@ react-native-svg-transformer@^1.0.0:
     "@svgr/plugin-svgo" "^6.1.2"
     path-dirname "^1.0.2"
 
-react-native-svg@^12.3.0:
+react-native-svg@^12.1.0, react-native-svg@^12.3.0:
   version "12.3.0"
   resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.3.0.tgz#40f657c5d1ee366df23f3ec8dae76fd276b86248"
   integrity sha512-ESG1g1j7/WLD7X3XRFTQHVv0r6DpbHNNcdusngAODIxG88wpTWUZkhcM3A2HJTb+BbXTFDamHv7FwtRKWQ/ALg==

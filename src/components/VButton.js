@@ -2,7 +2,11 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import VText from './VText';
 import colors from '../constants/colors';
+import VIcon from './VIcon';
 
+const renderIcon = (icon) => {
+  //   return <ArrowUp color={colors.white} set="light" />;
+};
 export default function VButton({ label, icon, outlined, style, disabled, onPress }) {
   return (
     <TouchableOpacity
@@ -10,6 +14,7 @@ export default function VButton({ label, icon, outlined, style, disabled, onPres
       style={[styles.container, disabled && styles.disabled, style]}
       onPress={onPress}
     >
+      {icon && <VIcon name={icon} color={colors.white} style={{ marginRight: 15 }} />}
       <VText white>{label}</VText>
     </TouchableOpacity>
   );
