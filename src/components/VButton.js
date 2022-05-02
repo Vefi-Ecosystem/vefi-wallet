@@ -7,7 +7,8 @@ export default function VButton({ label, icon, outlined, style, disabled, onPres
       <Text
         style={{
           color: 'white',
-          fontSize: 16
+          fontSize: 16,
+          fontFamily: 'Sf'
         }}
       >
         {label}
@@ -27,5 +28,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 10
   },
-  disabled: {}
+    disabled: {
+      
+  }
 });
