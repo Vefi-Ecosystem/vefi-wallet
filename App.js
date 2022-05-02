@@ -2,13 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import VButton from './src/components/VButton';
 import { useFonts } from 'expo-font';
+import { Roboto_500Medium } from '@expo-google-fonts/roboto';
+
 import AppLoading from 'expo-app-loading';
 // import { Poppins_ } from '@expo-google-fonts/poppins';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     Sf: require('./assets/fonts/SfUI.ttf'),
-    Gilroy: require('./assets/fonts/Gilroy.ttf')
+    Gilroy: require('./assets/fonts/Gilroy.ttf'),
+    Roboto_500Medium
   });
 
   if (!fontsLoaded) {
