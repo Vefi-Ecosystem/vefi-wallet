@@ -11,6 +11,7 @@ export default function App() {
   let [fontsLoaded] = useFonts({
     Sf: require('./assets/fonts/SfUI.ttf'),
     GilroySemiBold: require('./assets/fonts/GilroySemiBold.ttf'),
+    GilroyMedium: require('./assets/fonts/GilroyMedium.ttf'),
     Poppins_600SemiBold,
     Roboto_500Medium
   });
