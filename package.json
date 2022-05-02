@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "format": "prettier --write **/**/*.{js,json}"
+    "format": "prettier --write **/**/*.{js,json}",
+    "lint": "eslint --ext .js src/"
   },
   "dependencies": {
     "@ethereumjs/tx": "^3.5.0",
