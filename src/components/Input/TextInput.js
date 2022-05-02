@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import PropTypes from 'prop-types';
 
 const StyledView = styled.View`
   background: #f7f5f5;
@@ -18,10 +19,15 @@ const StyledInput = styled.TextInput`
   height: 48px;
 `;
 
-export default function TextInput({ onChangeText }) {
+const TextInput = ({ onChangeText, value }) => {
   return (
     <StyledView>
-      <StyledInput onChangeText={onChangeText} value={text} selectionColor={'black'} />
+      <StyledInput onChangeText={onChangeText} value={value} selectionColor={'black'} />
     </StyledView>
   );
-}
+};
+
+TextInput.propTypes = {
+  onChangeText: PropTypes.func,
+  value: PropTypes.string
+};
