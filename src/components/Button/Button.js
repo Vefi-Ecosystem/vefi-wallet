@@ -1,13 +1,10 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
-import VText from './VText';
-import colors from '../constants/colors';
-import VIcon from './VIcon';
+import VText from '../common/VText';
+import colors from '../../constants/colors';
+import VIcon from '../common/VIcon';
 
-const renderIcon = (icon) => {
-  //   return <ArrowUp color={colors.white} set="light" />;
-};
-export default function VButton({ label, icon, outlined, style, disabled, onPress }) {
+export default function VButton({ label, icon, style, disabled, onPress }) {
   return (
     <TouchableOpacity
       disabled={disabled}

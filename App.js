@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import VButton from './src/components/VButton';
+import VButton from './src/components/Button/Button';
 import { useFonts } from 'expo-font';
 import { Roboto_500Medium } from '@expo-google-fonts/roboto';
 
