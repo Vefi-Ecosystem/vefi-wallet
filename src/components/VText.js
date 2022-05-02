@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import colors from '../constants/colors';
 
 export default function VText({
   children,
@@ -42,5 +43,11 @@ export default function VText({
 }
 
 const styles = StyleSheet.create({
-    text: {}
+  text: {
+    fontFamily: 'Sf',
+    fontSize: 16
+  },
+  white: {
+    color: colors.white
+  }
 });

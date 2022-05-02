@@ -1,18 +1,16 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import React from 'react';
+import VText from './VText';
+import colors from '../constants/colors';
 
 export default function VButton({ label, icon, outlined, style, disabled, onPress }) {
   return (
-    <TouchableOpacity style={[styles.container, style]}>
-      <Text
-        style={{
-          color: 'white',
-          fontSize: 16,
-          fontFamily: 'Sf'
-        }}
-      >
-        {label}
-      </Text>
+    <TouchableOpacity
+      disabled={disabled}
+      style={[styles.container, disabled && styles.disabled, style]}
+      onPress={onPress}
+    >
+      <VText white>{label}</VText>
     </TouchableOpacity>
   );
 }
@@ -28,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginVertical: 10
   },
-    disabled: {
-      
+  disabled: {
+    backgroundColor: colors.lightGrey
   }
 });
