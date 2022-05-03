@@ -69,6 +69,13 @@ const styles = StyleSheet.create({
     fontFamily: 'SfSemiBold',
     fontSize: 16
   },
+  medium: {
+    fontSize: 18,
+    marginVertical: 5
+  },
+  small: {
+    fontSize: 14
+  },
   title: {
     fontSize: 28,
     marginVertical: 10

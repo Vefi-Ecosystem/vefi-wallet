@@ -5,6 +5,7 @@ import { Roboto_500Medium } from '@expo-google-fonts/roboto';
 import AppLoading from 'expo-app-loading';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 import Onboarding from './src/screens/Onboarding';
+import EnableNotifications from './src/screens/EnableNotifications';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,5 +17,5 @@ export default function App() {
     Roboto_500Medium
   });
 
-  return !fontsLoaded ? <AppLoading /> : <Onboarding />;
+  return !fontsLoaded ? <AppLoading /> : <EnableNotifications />;
 }
