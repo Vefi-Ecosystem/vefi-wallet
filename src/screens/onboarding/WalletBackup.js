@@ -42,7 +42,7 @@ export default function WalletBackup() {
             }}
           />
 
-          <VButton label="Continue" />
+          <VButton label="Continue" disabled={!radioOneChecked || !radioTwoChecked || !radioThreeChecked} />
         </View>
       </View>
     </Screen>
