@@ -1,11 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import React from 'react';
-import colors from '../constants/colors';
+import * as colors from '../../constants/colors';
 
 export default function VText({
   children,
   title,
-  dark,
   centered,
   small,
   grey,
@@ -36,6 +35,7 @@ export default function VText({
         white && styles.white,
         bold && styles.bold
       ]}
+      {...props}
     >
       {children}
     </Text>
@@ -49,5 +49,8 @@ const styles = StyleSheet.create({
   },
   white: {
     color: colors.white
+  },
+  black: {
+    color: colors.black
   }
 });
