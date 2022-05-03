@@ -1,7 +1,4 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import VButton from './src/components/Button/Button';
 import { useFonts } from 'expo-font';
 import { Roboto_500Medium } from '@expo-google-fonts/roboto';
 
@@ -21,13 +18,3 @@ export default function App() {
 
   return !fontsLoaded ? <AppLoading /> : <Onboarding />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingHorizontal: 20
-  }
-});

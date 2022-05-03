@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 import React from 'react';
 import VText from '../components/common/VText';
 import Screen from '../components/common/Screen';
