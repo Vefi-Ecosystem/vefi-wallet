@@ -32,7 +32,9 @@ export default function Onboarding() {
           <VText font="GilroySemiBold" title centered>
             One place for all
           </VText>
-          <VText grey> Seamlessly trade and store all your assests</VText>
+          <VText grey centered>
+            Seamlessly trade and store all your assests
+          </VText>
         </View>
         <View style={{ marginVertical: 30 }}>
           <VButton label="Create new account" />
