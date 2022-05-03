@@ -4,17 +4,23 @@ import VText from '../common/VText';
 import * as colors from '../../constants/colors';
 import VIcon from '../common/VIcon';
 
-export default function VButton({ label, icon, style, disabled, onPress, outlined }) {
+export default function VButton({ label, icon, style, disabled, onPress, outlined, textual }) {
   return (
     <TouchableOpacity
       disabled={disabled}
-      style={[styles.container, disabled && styles.disabled, outlined && styles.outlined, style]}
+      style={[
+        styles.container,
+        disabled && styles.disabled,
+        outlined && styles.outlined,
+        textual && styles.textual,
+        style
+      ]}
       onPress={onPress}
     >
       {icon && (
         <VIcon name={icon} color={outlined ? colors.black : colors.white} style={{ marginRight: 11 }} size={25} />
       )}
-      <VText white={!outlined} button>
+      <VText white={!outlined} black={textual} button font={textual ? 'GilroyMedium' : 'SfSemiBold'}>
         {label}
       </VText>
     </TouchableOpacity>
@@ -40,5 +46,9 @@ const styles = StyleSheet.create({
     borderColor: colors.black,
     backgroundColor: colors.white,
     height: 46.5
+  },
+  textual: {
+    backgroundColor: colors.white,
+    height: 48
   }
 });

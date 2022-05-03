@@ -28,12 +28,12 @@ export default function App() {
         label="Send To Multiple Wallet Address"
         onPress={() => console.log('Button Pressed')}
         icon="arrow-up-circle-outline"
-        outlined
       />
       <VButton
         label="Send To Multiple Wallet Address"
         onPress={() => console.log('Button Pressed')}
         icon="arrow-up-circle-outline"
+        textual
       />
     </View>
   );
