@@ -11,6 +11,7 @@ import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 export default function App() {
   const [fontsLoaded] = useFonts({
     Sf: require('./assets/fonts/SfUI.ttf'),
+    SfSemiBold: require('./assets/fonts/SfUiSemiBold.ttf'),
     GilroySemiBold: require('./assets/fonts/GilroySemiBold.ttf'),
     GilroyMedium: require('./assets/fonts/GilroyMedium.ttf'),
     Poppins_600SemiBold,
