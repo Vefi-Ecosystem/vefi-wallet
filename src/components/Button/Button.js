@@ -1,7 +1,7 @@
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 import VText from '../common/VText';
-import colors from '../../constants/colors';
+import * as colors from '../../constants/colors';
 import VIcon from '../common/VIcon';
 
 export default function VButton({ label, icon, style, disabled, onPress }) {
