@@ -16,6 +16,7 @@ export default function VText({
   white,
   bold,
   padded,
+  button,
   ...props
 }) {
   return (
@@ -31,6 +32,7 @@ export default function VText({
         green && styles.green,
         primary && styles.primary,
         medium && styles.medium,
+        button && styles.button,
         left && styles.left,
         white && styles.white,
         bold && styles.bold
@@ -52,5 +54,9 @@ const styles = StyleSheet.create({
   },
   black: {
     color: colors.black
+  },
+  button: {
+    fontFamily: 'SfSemiBold',
+    fontSize: 14
   }
 });

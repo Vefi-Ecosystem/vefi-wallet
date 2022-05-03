@@ -12,7 +12,9 @@ export default function VButton({ label, icon, style, disabled, onPress }) {
       onPress={onPress}
     >
       {icon && <VIcon name={icon} color={colors.white} style={{ marginRight: 15 }} />}
-      <VText white>{label}</VText>
+      <VText white button>
+        {label}
+      </VText>
     </TouchableOpacity>
   );
 }
@@ -20,7 +22,7 @@ export default function VButton({ label, icon, style, disabled, onPress }) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'black',
-    padding: 10,
+    padding: 12,
     borderRadius: 8,
     width: '100%',
     flexDirection: 'row',
