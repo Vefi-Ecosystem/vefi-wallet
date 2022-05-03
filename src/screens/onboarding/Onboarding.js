@@ -1,8 +1,8 @@
 import { Image, StyleSheet, View } from 'react-native';
 import React from 'react';
-import VText from '../components/common/VText';
-import Screen from '../components/common/Screen';
-import VButton from '../components/Button/Button';
+import VText from '../../components/common/VText';
+import Screen from '../../components/common/Screen';
+import VButton from '../../components/Button/Button';
 
 export default function Onboarding() {
   return (
@@ -21,7 +21,7 @@ export default function Onboarding() {
           }}
         >
           <Image
-            source={require('../../assets/images/onboarding.png')}
+            source={require('../../../assets/images/onboarding.png')}
             style={{
               width: '100%',
               height: 250,

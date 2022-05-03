@@ -1,8 +1,8 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React, { useState, useEffect, useRef } from 'react';
-import Screen from '../components/common/Screen';
-import VText from '../components/common/VText';
-import VButton from '../components/Button/Button';
+import Screen from '../../components/common/Screen';
+import VText from '../../components/common/VText';
+import VButton from '../../components/Button/Button';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 export default function EnableNotifications() {
@@ -59,7 +59,7 @@ export default function EnableNotifications() {
 
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <Image
-            source={require('../../assets/icons/notifications.png')}
+            source={require('../../../assets/icons/notifications.png')}
             style={{
               height: 100,
               resizeMode: 'contain',
