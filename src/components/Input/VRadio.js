@@ -17,7 +17,7 @@ export default function VRadio({ checked, onPress }) {
         padding: 10
       }}
     >
-      <View style={{ width: '70%' }}>
+      <View style={{ width: '70%', marginLeft: 10 }}>
         <VText font="Sf" small>
           It is my full responsibility to keep my secret phrase secure.
         </VText>
