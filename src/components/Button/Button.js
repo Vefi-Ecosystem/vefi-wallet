@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   },
   textual: {
     backgroundColor: colors.white,
-    height: 48
+    height: 48,
+    marginVertical: 5
   }
 });

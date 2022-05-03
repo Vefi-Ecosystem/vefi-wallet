@@ -40,7 +40,7 @@ export default function VText({
         black && styles.black,
         bold && styles.bold,
         {
-          fontFamily: font ? font : 'GilroyMedium',
+          fontFamily: font ? font : 'GilroyMedium'
         }
       ]}
       {...props}
@@ -53,7 +53,8 @@ export default function VText({
 const styles = StyleSheet.create({
   text: {
     fontFamily: 'Sf',
-    fontSize: 16
+    fontSize: 16,
+    marginVertical: 1
   },
   white: {
     color: colors.white
@@ -61,8 +62,18 @@ const styles = StyleSheet.create({
   black: {
     color: colors.black
   },
+  grey: {
+    color: colors.darkgrey
+  },
   button: {
     fontFamily: 'SfSemiBold',
     fontSize: 16
+  },
+  title: {
+    fontSize: 28,
+    marginVertical: 10
+  },
+  centered: {
+    textAlign: 'center'
   }
 });
