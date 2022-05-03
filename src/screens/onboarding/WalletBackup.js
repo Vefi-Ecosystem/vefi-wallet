@@ -10,7 +10,7 @@ export default function WalletBackup() {
   const [radioTwoChecked, setRadioTwoChecked] = useState(false);
   const [radioThreeChecked, setRadioThreeChecked] = useState(false);
   return (
-    <Screen>
+    <Screen backButtonShown backButtonLabel="Legal">
       <View style={{ flex: 1, justifyContent: 'space-between' }}>
         <View style={{ marginVertical: 30 }}>
           <VText medium font="GilroySemiBold" centered>
