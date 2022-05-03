@@ -7,6 +7,7 @@ import { Roboto_500Medium } from '@expo-google-fonts/roboto';
 
 import AppLoading from 'expo-app-loading';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
+import Onboarding from './src/screens/Onboarding';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,25 +19,7 @@ export default function App() {
     Roboto_500Medium
   });
 
-  return !fontsLoaded ? (
-    <AppLoading />
-  ) : (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <VButton
-        label="Send To Multiple Wallet Address"
-        onPress={() => console.log('Button Pressed')}
-        icon="arrow-up-circle-outline"
-      />
-      <VButton
-        label="Send To Multiple Wallet Address"
-        onPress={() => console.log('Button Pressed')}
-        icon="arrow-up-circle-outline"
-        textual
-      />
-    </View>
-  );
+  return !fontsLoaded ? <AppLoading /> : <Onboarding />;
 }
 
 const styles = StyleSheet.create({
