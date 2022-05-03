@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
   outlined: {
     borderWidth: 1.5,
     borderColor: colors.black,
-    backgroundColor: colors.white
+    backgroundColor: colors.white,
+    height: 46.5
   }
 });
