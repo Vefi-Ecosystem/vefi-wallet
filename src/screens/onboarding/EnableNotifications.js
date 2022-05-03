@@ -75,5 +75,3 @@ export default function EnableNotifications() {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({});
