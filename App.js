@@ -25,7 +25,13 @@ export default function App() {
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
       <VButton
-        label="Send To A Single Wallet Address"
+        label="Send To Multiple Wallet Address"
+        onPress={() => console.log('Button Pressed')}
+        icon="arrow-up-circle-outline"
+        outlined
+      />
+      <VButton
+        label="Send To Multiple Wallet Address"
         onPress={() => console.log('Button Pressed')}
         icon="arrow-up-circle-outline"
       />

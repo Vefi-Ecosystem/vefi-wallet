@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
   },
   button: {
     fontFamily: 'SfSemiBold',
-    fontSize: 14
+    fontSize: 16
   }
 });
