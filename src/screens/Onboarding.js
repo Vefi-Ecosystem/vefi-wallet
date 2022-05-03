@@ -34,7 +34,7 @@ export default function Onboarding() {
           </VText>
           <VText grey> Seamlessly trade and store all your assests</VText>
         </View>
-        <View style={{ marginVertical: 25 }}>
+        <View style={{ marginVertical: 30 }}>
           <VButton label="Create new account" />
           <VButton label="I already have an account" textual />
         </View>
