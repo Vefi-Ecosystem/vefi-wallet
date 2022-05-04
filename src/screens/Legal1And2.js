@@ -34,11 +34,6 @@ align-items: center;
 
 `;
 
-const BackIcon = styled.Image`
-    height: 14px;
-    width: 7px;
-   
-`;
 
 const ReviewAndPolicyView = styled.View`
 width: 100%;
