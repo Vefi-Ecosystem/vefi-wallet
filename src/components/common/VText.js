@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   medium: {
-    fontSize: 18,
+    fontSize: 20,
     marginVertical: 5
   },
   small: {
