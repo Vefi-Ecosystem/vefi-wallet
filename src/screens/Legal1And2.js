@@ -227,7 +227,7 @@ function Legal1And2() {
 
                 </CheckboxContainer>
 
-                <VButton label="Continue" />
+                <VButton label="Continue" disabled={!isChecked} />
              
             </BottomContainer>
        </MainSubContainer>
