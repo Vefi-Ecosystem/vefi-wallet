@@ -12,7 +12,7 @@ const Navigation = () => {
     <NavigationContainer>
       <Navigator>
         <Group screenOptions={{ headerShown: false }}>
-          {/* <Screen name="onboarding" component={Onboarding} /> */}
+          <Screen name="onboarding" component={Onboarding} />
           <Screen name="walletBackup" component={WalletBackup} />
           <Screen name="notifications" component={EnableNotifications} />
         </Group>
