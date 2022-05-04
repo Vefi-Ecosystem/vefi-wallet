@@ -4,6 +4,8 @@ import Screen from '../components/common/Screen';
 import { View,Text,TouchableOpacity} from 'react-native';
 import Checkbox from 'expo-checkbox';
 import VButton from '../components/Button/Button';
+import VText from '../components/common/VText';
+import VIcon from '../components/common/VIcon';
 
 
 
@@ -84,14 +86,7 @@ const PolicySub = styled.View`
 
 `;
 
-const PolicyText = styled.Text`
 
-font-family: 'GilroyMedium';
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-color: #101010;
-`;
 
 const RightArrow = styled.Image`
     height: 15px;
@@ -145,16 +140,16 @@ function Legal1And2() {
             <Title>
                 <TouchableOpacity>
                 <View style={{display: 'flex',flexDirection:'row',width: 75,justifyContent:"flex-start",alignItems:"center"}}>
-                    <BackIcon
-                        source={require('../../assets/icons/backIcon.png')}
+                    <VIcon
+                        name="chevron-back"
                     />
                       <Text style={{
                           color: '#200E32',
                           fontSize: 16,
                           fontFamily:"GilroySemiBold",
                           lineHeight: 22,
-                          fontWeight: "400",
-                          marginLeft: 10
+                          fontWeight: "400"
+                        
                       }}>Back</Text>
                 </View>
                 </TouchableOpacity>
@@ -181,7 +176,7 @@ function Legal1And2() {
             <PolicyView>
                     <TouchableOpacity>
                     <PolicySub>
-                        <PolicyText>Privacy Policy</PolicyText>
+                        <VText font="GilroyMedium">Privacy Policy</VText>
                         
                         <RightArrow 
                         source={require('../../assets/icons/forwardIcon.png')}
@@ -200,7 +195,7 @@ function Legal1And2() {
 
                     <TouchableOpacity>
                      <PolicySub>
-                        <PolicyText>Terms of Service</PolicyText>
+                       <VText font="GilroyMedium" >Terms of Service</VText>
                         
                         <RightArrow 
                         source={require('../../assets/icons/forwardIcon.png')}
