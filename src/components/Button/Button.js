@@ -1,20 +1,26 @@
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 import React from 'react';
 import VText from '../common/VText';
 import * as colors from '../../constants/colors';
 import VIcon from '../common/VIcon';
 
-export default function VButton({ label, icon, style, disabled, onPress, outlined, textual }) {
+const StyledTouchableOpacity = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.buttonBg};
+  height: 48px;
+  border-radius: 8px;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-vertical: 10px;
+`;
+
+export default function VButton({ label, transparent, icon, disabled, onPress, outlined, textual }) {
   return (
-    <TouchableOpacity
+    <StyledTouchableOpacity
       disabled={disabled}
-      style={[
-        styles.container,
-        disabled && styles.disabled,
-        outlined && styles.outlined,
-        textual && styles.textual,
-        style
-      ]}
+      style={[disabled && styles.disabled, transparent && { backgroundColor: 'transparent' }]}
       onPress={onPress}
     >
       {icon && (
@@ -23,7 +29,7 @@ export default function VButton({ label, icon, style, disabled, onPress, outline
       <VText white={!outlined} black={textual} button font={textual ? 'GilroyMedium' : 'SfSemiBold'}>
         {label}
       </VText>
-    </TouchableOpacity>
+    </StyledTouchableOpacity>
   );
 }
 

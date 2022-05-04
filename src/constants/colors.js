@@ -11,3 +11,4 @@ export const pending = '#F9AA4B';
 export const success = '#37C771';
 export const failure = '#C73737';
 export const inputBorder = '#A2B2BE';
+export const appBGDark = '#121212';

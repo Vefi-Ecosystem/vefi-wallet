@@ -4,9 +4,9 @@ import { Roboto_500Medium } from '@expo-google-fonts/roboto';
 
 import AppLoading from 'expo-app-loading';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
-import Onboarding from './src/screens/onboarding/Onboarding';
-import EnableNotifications from './src/screens/onboarding/EnableNotifications';
-import WalletBackup from './src/screens/onboarding/WalletBackup';
+// import Onboarding from './src/screens/Onboarding';
+import Navigation from './src/navigation';
+import { ThemeContextProvider } from './src/contexts/theme';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -18,5 +18,11 @@ export default function App() {
     Roboto_500Medium
   });
 
-  return !fontsLoaded ? <AppLoading /> : <WalletBackup />;
+  return !fontsLoaded ? (
+    <AppLoading />
+  ) : (
+    <ThemeContextProvider>
+      <Navigation />
+    </ThemeContextProvider>
+  );
 }
