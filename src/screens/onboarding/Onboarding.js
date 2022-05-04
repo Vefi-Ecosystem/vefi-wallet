@@ -1,9 +1,9 @@
 import { Image, View } from 'react-native';
 import React from 'react';
-import VText from '../components/common/VText';
-import Screen from '../components/common/Screen';
-import VButton from '../components/Button/Button';
-import { useTheme } from '../contexts/theme';
+import VText from '../../components/common/VText';
+import Screen from '../../components/common/Screen';
+import VButton from '../../components/Button/Button';
+import { useTheme } from '../../contexts/theme';
 
 export default function Onboarding() {
   const theme = useTheme();
@@ -24,7 +24,7 @@ export default function Onboarding() {
           }}
         >
           <Image
-            source={require('../../assets/images/onboarding.png')}
+            source={require('../../../assets/images/onboarding.png')}
             style={{
               width: '100%',
               height: 250,
@@ -35,7 +35,9 @@ export default function Onboarding() {
           <VText white={theme.mode === 'dark'} black={theme.mode === 'light'} font="GilroySemiBold" title centered>
             One place for all
           </VText>
-          <VText grey> Seamlessly trade and store all your assests</VText>
+          <VText grey centered>
+            Seamlessly trade and store all your assests
+          </VText>
         </View>
         <View style={{ marginVertical: 30 }}>
           <VButton textual={theme.mode === 'dark'} label="Create new account" />

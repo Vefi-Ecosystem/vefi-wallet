@@ -4,6 +4,7 @@ import React from 'react';
 import VText from '../common/VText';
 import * as colors from '../../constants/colors';
 import VIcon from '../common/VIcon';
+import { useTheme } from '../../contexts/theme';
 
 const StyledTouchableOpacity = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.buttonBg};
@@ -17,6 +18,7 @@ const StyledTouchableOpacity = styled.TouchableOpacity`
 `;
 
 export default function VButton({ label, transparent, icon, disabled, onPress, outlined, textual }) {
+  const theme = useTheme();
   return (
     <StyledTouchableOpacity
       disabled={disabled}
@@ -26,7 +28,12 @@ export default function VButton({ label, transparent, icon, disabled, onPress, o
       {icon && (
         <VIcon name={icon} color={outlined ? colors.black : colors.white} style={{ marginRight: 11 }} size={25} />
       )}
-      <VText white={!outlined} black={textual} button font={textual ? 'GilroyMedium' : 'SfSemiBold'}>
+      <VText
+        white={!outlined && theme.mode === 'dark'}
+        black={textual && theme.mode === 'light'}
+        button
+        font={textual ? 'GilroyMedium' : 'SfSemiBold'}
+      >
         {label}
       </VText>
     </StyledTouchableOpacity>
