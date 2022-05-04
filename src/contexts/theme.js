@@ -9,7 +9,7 @@ const ThemeContext = createContext({
 });
 
 export const ThemeContextProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   const setMode = (mode) => setTheme(mode);
 
