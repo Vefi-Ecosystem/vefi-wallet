@@ -6,6 +6,7 @@ import AppLoading from 'expo-app-loading';
 import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 import Onboarding from './src/screens/Onboarding';
 import EnableNotifications from './src/screens/EnableNotifications';
+import Legal1And2 from './src/screens/Legal1And2';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,5 +18,5 @@ export default function App() {
     Roboto_500Medium
   });
 
-  return !fontsLoaded ? <AppLoading /> : <EnableNotifications />;
+  return !fontsLoaded ? <AppLoading /> : <Legal1And2 />;
 }
