@@ -2,8 +2,10 @@ import { View, TouchableOpacity, ColorPropType } from 'react-native';
 import React from 'react';
 import VText from '../common/VText';
 import * as colors from '../../constants/colors';
+import { useTheme } from '../../contexts/theme';
 
 export default function VRadio({ checked, onPress }) {
+  const theme = useTheme();
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -18,7 +20,7 @@ export default function VRadio({ checked, onPress }) {
       }}
     >
       <View style={{ width: '70%', marginLeft: 10 }}>
-        <VText font="Sf" small>
+        <VText font="Sf" small white={theme.mode === 'dark'} black={theme.mode === 'light'}>
           It is my full responsibility to keep my secret phrase secure.
         </VText>
       </View>
