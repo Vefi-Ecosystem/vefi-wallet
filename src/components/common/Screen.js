@@ -7,7 +7,7 @@ const StyledView = styled.View`
   background-color: ${(props) => props.theme.appBg};
 `;
 
-export default function Screen({ children, styles }) {
+export default function Screen({ children, styles, backButtonShown, backButtonLabel, backButtonOnPress }) {
   return (
     <StyledView
       style={[

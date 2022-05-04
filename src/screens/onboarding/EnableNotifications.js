@@ -1,8 +1,8 @@
 import { Image, View, Platform } from 'react-native';
 import React from 'react';
-import Screen from '../components/common/Screen';
-import VText from '../components/common/VText';
-import VButton from '../components/Button/Button';
+import Screen from '../../components/common/Screen';
+import VText from '../../components/common/VText';
+import VButton from '../../components/Button/Button';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 export default function EnableNotifications() {

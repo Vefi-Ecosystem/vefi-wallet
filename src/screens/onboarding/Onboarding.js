@@ -1,9 +1,9 @@
 import { Image, View } from 'react-native';
 import React from 'react';
-import VText from '../components/common/VText';
-import Screen from '../components/common/Screen';
-import VButton from '../components/Button/Button';
-import { useTheme } from '../contexts/theme';
+import VText from '../../components/common/VText';
+import Screen from '../../components/common/Screen';
+import VButton from '../../components/Button/Button';
+import { useTheme } from '../../contexts/theme';
 
 export default function Onboarding() {
   const theme = useTheme();
