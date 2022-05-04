@@ -1,10 +1,14 @@
-import { Text, View } from 'react-native';
+import styled from 'styled-components/native';
 import React from 'react';
 import Constants from 'expo-constants';
 
+const StyledView = styled.View`
+  background-color: ${(props) => props.theme.appBg};
+`;
+
 export default function Screen({ children, styles }) {
   return (
-    <View
+    <StyledView
       style={[
         {
           flex: 1,
@@ -15,6 +19,6 @@ export default function Screen({ children, styles }) {
       ]}
     >
       {children}
-    </View>
+    </StyledView>
   );
 }

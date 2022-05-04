@@ -1,6 +1,11 @@
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 import React from 'react';
 import * as colors from '../../constants/colors';
+
+const StyledText = styled.Text`
+  color: ${(props) => props.theme.buttonText};
+`;
 
 export default function VText({
   children,
@@ -22,7 +27,7 @@ export default function VText({
   ...props
 }) {
   return (
-    <Text
+    <StyledText
       style={[
         styles.text,
         centered && styles.centered,
@@ -46,7 +51,7 @@ export default function VText({
       {...props}
     >
       {children}
-    </Text>
+    </StyledText>
   );
 }
 

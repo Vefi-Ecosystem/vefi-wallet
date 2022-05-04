@@ -1,12 +1,12 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
-import React, { useState, useEffect, useRef } from 'react';
+import { Image, View, Platform } from 'react-native';
+import React from 'react';
 import Screen from '../components/common/Screen';
 import VText from '../components/common/VText';
 import VButton from '../components/Button/Button';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 export default function EnableNotifications() {
-  const [expoPushToken, setExpoPushToken] = useState('');
+  // const [expoPushToken, setExpoPushToken] = useState('');
 
   async function registerForPushNotificationsAsync() {
     let token;
@@ -18,13 +18,13 @@ export default function EnableNotifications() {
         finalStatus = status;
       }
       if (finalStatus !== 'granted') {
-        alert('Failed to get push token for push notification!');
+        // alert('Failed to get push token for push notification!');
         return;
       }
       token = (await Notifications.getExpoPushTokenAsync()).data;
       console.log(token);
     } else {
-      alert('Must use physical device for Push Notifications');
+      // alert('Must use physical device for Push Notifications');
     }
 
     if (Platform.OS === 'android') {
@@ -41,7 +41,7 @@ export default function EnableNotifications() {
 
   const getToken = () => {
     registerForPushNotificationsAsync().then((token) => {
-      setExpoPushToken(token);
+      //setExpoPushToken(token);
       console.log('Token Is, ', token);
     });
   };
@@ -76,4 +76,4 @@ export default function EnableNotifications() {
   );
 }
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});
