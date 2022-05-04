@@ -5,7 +5,9 @@ import VText from '../../components/common/VText';
 import VButton from '../../components/Button/Button';
 import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
+import { useTheme } from '../../contexts/theme';
 export default function EnableNotifications() {
+  const theme = useTheme();
   // const [expoPushToken, setExpoPushToken] = useState('');
 
   async function registerForPushNotificationsAsync() {
@@ -49,10 +51,10 @@ export default function EnableNotifications() {
     <Screen>
       <View style={{ flex: 1, justifyContent: 'space-between' }}>
         <View style={{ marginVertical: 30 }}>
-          <VText medium font="GilroySemiBold" centered>
+          <VText medium font="GilroySemiBold" centered white={theme.mode === 'dark'} black={theme.mode === 'light'}>
             Enable Notifications
           </VText>
-          <VText font="Sf" small centered>
+          <VText font="Sf" small centered white={theme.mode === 'dark'} black={theme.mode === 'light'}>
             Enable notifications so you don’t miss out on any important notification
           </VText>
         </View>
@@ -69,7 +71,7 @@ export default function EnableNotifications() {
         </View>
         <View style={{ marginVertical: 30 }}>
           <VButton label="Enable Notifications" onPress={getToken} />
-          <VButton label="Cancel" textual />
+          <VButton label="Cancel" textual transparent />
         </View>
       </View>
     </Screen>
