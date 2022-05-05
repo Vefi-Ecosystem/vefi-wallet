@@ -6,22 +6,12 @@ import Checkbox from 'expo-checkbox';
 import VButton from '../components/Button/Button';
 import VText from '../components/common/VText';
 import VIcon from '../components/common/VIcon';
+import { MainSubContainer, TopContainer,BottomContainer } from '../components/common/CommonStyles';
 
 
 
 
 
-const MainSubContainer = styled.View`
-width: 100%;
-height: 100%;
-
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-
-
-`;
 
 const Title = styled.View`
 width: 100%;
@@ -72,7 +62,7 @@ const PolicyView = styled.View`
 `;
 
 const PolicySub = styled.View`
-    margin-top: 14px;
+    margin-top: 12px;
     padding-left: 10px;
     padding-right: 10px;
     display: flex;
@@ -91,25 +81,7 @@ const RightArrow = styled.Image`
    
 `;
 
-const TopContainer =styled.View`
 
-display: flex;
-flex-direction: column;
-align-items: center;
-
-width: 100%;
-
-`;
-
-const BottomContainer =styled.View`
-
-display: flex;
-flex-direction: column;
-align-items: center;
-
-width: 100%;
-margin-bottom: 25px;
-`;
 
 const CheckboxContainer = styled.View`
     display: flex;
@@ -137,6 +109,7 @@ function Legal1And2() {
                 <View style={{display: 'flex',flexDirection:'row',width: 75,justifyContent:"flex-start",alignItems:"center"}}>
                     <VIcon
                         name="chevron-back"
+                      
                     />
                       <Text style={{
                           color: '#200E32',
@@ -173,8 +146,7 @@ function Legal1And2() {
                     <PolicySub>
                         <VText font="GilroyMedium">Privacy Policy</VText>
                         
-                        <RightArrow 
-                        source={require('../../assets/icons/forwardIcon.png')}
+                        <VIcon name="chevron-forward"  size={18}
                         />
                     </PolicySub>
                     </TouchableOpacity>
@@ -192,8 +164,7 @@ function Legal1And2() {
                      <PolicySub>
                        <VText font="GilroyMedium" >Terms of Service</VText>
                         
-                        <RightArrow 
-                        source={require('../../assets/icons/forwardIcon.png')}
+                       <VIcon name="chevron-forward" size={18}
                         />
                     </PolicySub>
                     </TouchableOpacity>

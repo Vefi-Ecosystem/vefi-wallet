@@ -7,6 +7,8 @@ import { Poppins_600SemiBold } from '@expo-google-fonts/poppins';
 import Onboarding from './src/screens/Onboarding';
 import EnableNotifications from './src/screens/EnableNotifications';
 import Legal1And2 from './src/screens/Legal1And2';
+import PassCodeEntry1 from './src/screens/PassCodeEntry1';
+import CodeEntry from './src/screens/CodeEntry';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
