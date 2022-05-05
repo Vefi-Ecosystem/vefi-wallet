@@ -3,11 +3,11 @@ import styled from 'styled-components/native';
 import Screen from '../components/common/Screen';
 import { View,Text,TouchableOpacity} from 'react-native';
 import Checkbox from 'expo-checkbox';
-import VButton from '../components/Button/Button';
 import VText from '../components/common/VText';
 import VIcon from '../components/common/VIcon';
 import { MainSubContainer, TopContainer,BottomContainer } from '../components/common/CommonStyles';
-
+import { useTheme } from '../contexts/theme';
+import VButton2 from '../components/Button/Button2';
 
 
 
@@ -32,7 +32,7 @@ margin-top: 30px;
 `;
 
 const ReviewText = styled.Text`
-color: #495057;
+color: ${props => props.lightMode ? "#495057" : "#FAFAFA"};
 font-weight: 400;
 font-size: 14px;
 line-height: 22px;
@@ -40,7 +40,7 @@ font-family: 'GilroyMedium';
 `;
 
 const TermsText = styled.Text`
-color: #495057;
+color: ${props => props.lightMode ? "#495057" : "#FAFAFA"};
 font-weight: 400;
 font-size: 14px;
 margin-right: 20px;
@@ -52,7 +52,7 @@ margin-left: 10px;
 const PolicyView = styled.View`
     width: 100%;
     height: 97px;
-    background: rgba(246, 245, 245, 0.85);
+    background: ${props => props.lightMode ?"rgba(246, 245, 245, 0.85)":"#212121"};
 
     border-radius: 8px;
     margin-top: 17px;
@@ -95,24 +95,27 @@ const CheckboxContainer = styled.View`
 `;
 
 
-function Legal1And2() {
+function Legal1And2({navigation}) {
 
+ const theme = useTheme();
  const [isChecked, setChecked] = useState(false);
 
+
   return (
+
 
     <Screen>
        <MainSubContainer>
             <TopContainer>
             <Title>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate("onboarding")}> 
                 <View style={{display: 'flex',flexDirection:'row',width: 75,justifyContent:"flex-start",alignItems:"center"}}>
                     <VIcon
                         name="chevron-back"
-                      
+                        color={theme.mode=='light'?"black":"white"}
                     />
                       <Text style={{
-                          color: '#200E32',
+                          color: theme.mode=="light"?'#200E32':'#EEEEEE',
                           fontSize: 16,
                           fontFamily:"GilroySemiBold",
                           lineHeight: 22,
@@ -123,7 +126,8 @@ function Legal1And2() {
                 </TouchableOpacity>
                 <View style={{width: 75}}>
                 <Text style={{
-                          color: '#000000',
+                          color:theme.mode=='light'?"black":"white",
+                       
                           fontSize: 20,
                           fontFamily:"GilroySemiBold",
                           lineHeight: 22,
@@ -138,22 +142,22 @@ function Legal1And2() {
               
             </Title>
             <ReviewAndPolicyView>
-                    <ReviewText>Kindly review the Vefi Terms of Services and Privacy Policy </ReviewText>
+                    <ReviewText lightMode={theme.mode=="light"?true:false}>Kindly review the Vefi Terms of Services and Privacy Policy </ReviewText>
             </ReviewAndPolicyView>
 
-            <PolicyView>
+            <PolicyView lightMode={theme.mode=="light"?true:false}>
                     <TouchableOpacity>
                     <PolicySub>
-                        <VText font="GilroyMedium">Privacy Policy</VText>
+                        <VText  font="GilroyMedium" white={theme.mode === 'dark'} black={theme.mode === 'light'}>Privacy Policy</VText>
                         
-                        <VIcon name="chevron-forward"  size={18}
+                        <VIcon name="chevron-forward"  color={theme.mode=='light'?"black":"white"} size={18}
                         />
                     </PolicySub>
                     </TouchableOpacity>
 
                     <View
                         style={{
-                            borderBottomColor: '#D2D1D1',
+                            borderBottomColor: theme.mode=="light"?'#D2D1D1':'#2D2D2D',
                             borderBottomWidth: 1,
                             marginTop: 14,
                             marginLeft: 10
@@ -162,9 +166,9 @@ function Legal1And2() {
 
                     <TouchableOpacity>
                      <PolicySub>
-                       <VText font="GilroyMedium" >Terms of Service</VText>
+                       <VText font="GilroyMedium" white={theme.mode === 'dark'} black={theme.mode === 'light'}>Terms of Service</VText>
                         
-                       <VIcon name="chevron-forward" size={18}
+                       <VIcon name="chevron-forward"  color={theme.mode=='light'?"black":"white"} size={18}
                         />
                     </PolicySub>
                     </TouchableOpacity>
@@ -182,13 +186,13 @@ function Legal1And2() {
                     color={isChecked ? '#4630EB' : undefined}
                     />
 
-                    <TermsText>
+                    <TermsText lightMode={theme.mode=="light"?true:false}>
                     I’ve read and accepted the Terms of Service and Privacy Policy.
                     </TermsText>
 
                 </CheckboxContainer>
 
-                <VButton label="Continue" disabled={!isChecked} />
+                <VButton2 onPress={()=>{navigation.navigate('passCodeEntry1')}} label="Continue" disabled={!isChecked} />
              
             </BottomContainer>
        </MainSubContainer>

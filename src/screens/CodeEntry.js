@@ -3,9 +3,9 @@ import styled from 'styled-components/native';
 import Screen from '../components/common/Screen';
 import { View} from 'react-native';
 import { MainSubContainer, TopContainer,BottomContainer } from '../components/common/CommonStyles';
-import VButton from '../components/Button/Button';
+import VButton2 from '../components/Button/Button2';
 import VText from '../components/common/VText';
-
+import { useTheme } from '../contexts/theme';
 
 
 const ProtectView = styled.View`
@@ -23,7 +23,7 @@ font-style: normal;
 font-weight: 500;
 font-size: 14px;
 line-height: 22px;
-color: #495057;
+color: ${props => props.lightMode ? "#495057" : "#757575"};
 `;
 
 const CodeContainer = styled.View`
@@ -36,8 +36,9 @@ margin-top: 34px;
 `;
 
 const DotInActive = styled.View`
-background: #070734;
-opacity: 0.1;
+background: ${props => props.lightMode ? "#070734" : "#424242"};
+${props => props.lightMode ? "opacity: 0.1;" : ""}
+
 width: 12px;
 height: 12px;
 border-radius: 12px;
@@ -59,7 +60,9 @@ const StyledInput = styled.TextInput`
 
 `;
 
-export default function CodeEntry() {
+export default function CodeEntry({navigator}) {
+  const theme = useTheme();
+
 
   const [passCode,setPassCode] = useState("");  
 
@@ -68,12 +71,12 @@ export default function CodeEntry() {
         <MainSubContainer>
             <TopContainer>
                 <View style ={{marginTop:70}}>
-                    <VText font="GilroySemiBold">Create your safe passcode</VText>
+                    <VText font="GilroySemiBold" white={theme.mode === 'dark'} black={theme.mode === 'light'}>Create your safe passcode</VText>
                 </View>
                 
                 <ProtectView>
-                   <ProtectText>Passcode must apply 6 unique </ProtectText>
-                   <ProtectText>numeric characters </ProtectText>
+                   <ProtectText lightMode={theme.mode=="light"?true:false}>Passcode must apply 6 unique </ProtectText>
+                   <ProtectText lightMode={theme.mode=="light"?true:false}>numeric characters </ProtectText>
                 </ProtectView>
 
                 <CodeContainer>
@@ -84,14 +87,14 @@ export default function CodeEntry() {
                     )}
 
                     {"000000".substring(passCode.length).split("").map((data,i)=>(
-                        <DotInActive key={i}/>
+                        <DotInActive  lightMode={theme.mode=="light"?true:false} key={i}/>
                     ))}
                 </CodeContainer>
 
                 <StyledInput caretHidden={true} value={passCode} onChangeText={(inp)=>{if(inp.length<=6){setPassCode(inp)}}} autoFocus={true} keyboardType='numeric' />
             </TopContainer>
             <BottomContainer>
-                <VButton label="Continue" disabled={passCode.length!=6} />
+                <VButton2 label="Continue"  disabled={passCode.length!=6} />
             </BottomContainer>
         </MainSubContainer>
     </Screen>

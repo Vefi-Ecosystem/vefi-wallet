@@ -2,8 +2,9 @@
  import styled from 'styled-components/native';
  import Screen from '../components/common/Screen';
  import { MainSubContainer, TopContainer,BottomContainer } from '../components/common/CommonStyles';
-import VButton from '../components/Button/Button';
+import VButton2 from '../components/Button/Button2';
 import VText from '../components/common/VText';
+import { useTheme } from '../contexts/theme';
 
 const StyledLockImage = styled.Image`
  width: 154px;
@@ -26,23 +27,26 @@ font-style: normal;
 font-weight: 500;
 font-size: 14px;
 line-height: 22px;
-color: #495057;
+color: ${props => props.lightMode ? "#495057" : "#757575"};
 `;
 
- export default function PassCodeEntry1() {
+ export default function PassCodeEntry1({navigation}) {
+  const theme = useTheme();
+
    return (
      <Screen>
          <MainSubContainer>
              <TopContainer>
-                 <StyledLockImage source={require("../../assets/images/Lock.png")}/>
-                 <VText font="GilroySemiBold">Let's secure your account</VText>
-                 <ProtectView>
-                    <ProtectText>To help protect you from identity theft, we </ProtectText>
-                    <ProtectText> need you to create a unique passcode.</ProtectText>
+                 <StyledLockImage source={theme.mode=='light'?require("../../assets/images/Lock.png"):require("../../assets/images/LockDark.png")}/>
+                 
+                 <VText font="GilroySemiBold" white={theme.mode === 'dark'} black={theme.mode === 'light'}>Let's secure your account</VText>
+                 <ProtectView >
+                    <ProtectText lightMode={theme.mode=="light"?true:false}>To help protect you from identity theft, we </ProtectText>
+                    <ProtectText lightMode={theme.mode=="light"?true:false}> need you to create a unique passcode.</ProtectText>
                  </ProtectView>
              </TopContainer>
              <BottomContainer>
-                 <VButton label="Create passcode"  />
+                 <VButton2 label="Create passcode" onPress={()=>{navigation.navigate('codeEntry')}} />
              </BottomContainer>
          </MainSubContainer>
      </Screen>
