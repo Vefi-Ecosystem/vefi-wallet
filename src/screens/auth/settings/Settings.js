@@ -78,7 +78,7 @@ export default function Settings() {
             <SettingListItem
               item={{
                 title: 'Instagram',
-                color: '#C13584#6',
+                color: '#C13584E6',
                 icon: require('../../../../assets/icons/settings/instagram.png')
               }}
             />
