@@ -43,7 +43,7 @@ export default function SecretPhrase() {
         <View>
           <SeedPhraseWrapper phrases={phrases} />
           <TouchableOpacity onPress={copyToClipboard}>
-            <VText blue centered>
+            <VText blue centered font="Sf">
               Copy
             </VText>
           </TouchableOpacity>
