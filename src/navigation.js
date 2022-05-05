@@ -19,7 +19,6 @@ const Navigation = () => {
       <Navigator initialRouteName="settings">
         <Group screenOptions={{ headerShown: false }}>
           {/* {Onboarding} */}
-
           <Screen name="onboarding" component={Onboarding} />
           <Screen name="legal1And2" component={Legal1And2} />
           <Screen name="codeEntry" component={CodeEntry} />
