@@ -14,7 +14,7 @@ export default function SecretPhrase() {
   const copyToClipboard = () => {
     Clipboard.setString(phrases.toString());
   };
-  const phrases = [
+  const phrases  =[
     'cave',
     'stomach',
     'dog',
@@ -41,7 +41,7 @@ export default function SecretPhrase() {
         }}
       >
         <View>
-          <SeedPhraseWrapper phrases={phrases} />
+          <SeedPhraseWrapper phrases={phrases} onPhrasePress={()=>{}} removeSelectedPhrases={()=>{}}/>
           <TouchableOpacity onPress={copyToClipboard}>
             <VText blue centered font="Sf">
               Copy
