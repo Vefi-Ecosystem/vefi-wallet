@@ -10,7 +10,15 @@ const StyledView = styled.View`
   background-color: ${(props) => props.theme.appBg};
 `;
 
-export default function Screen({ children, styles, backButtonShown, backButtonLabel, backButtonOnPress, title }) {
+export default function Screen({
+  children,
+  styles,
+  backButtonShown,
+  backButtonLabel,
+  backButtonOnPress,
+  title,
+  description
+}) {
   const theme = useTheme();
   return (
     <StyledView
@@ -32,6 +40,14 @@ export default function Screen({ children, styles, backButtonShown, backButtonLa
         >
           <VText white={theme.mode === 'dark'} black={theme.mode === 'light'} font="PoppinsSemiBold" medium centered>
             {title}
+          </VText>
+        </View>
+      )}
+
+      {description && (
+        <View style={{ margin: 5 }}>
+          <VText grey font="GilroyMedium" small centered>
+            {description}
           </VText>
         </View>
       )}
