@@ -16,7 +16,7 @@ const { Group, Navigator, Screen } = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="settings">
+      <Navigator initialRouteName="verifySecretPhrase">
         <Group screenOptions={{ headerShown: false }}>
           {/* {Onboarding} */}
           <Screen name="onboarding" component={Onboarding} />

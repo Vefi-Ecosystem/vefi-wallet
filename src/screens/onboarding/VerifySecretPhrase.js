@@ -13,7 +13,7 @@ export default function VerifySecretPhrase() {
   const copyToClipboard = () => {
     Clipboard.setString(phrases.toString());
   };
-  const [phrases,setPhrases] = useState([
+  const [phrases, setPhrases] = useState([
     'cave',
     'stomach',
     'dog',
@@ -28,10 +28,10 @@ export default function VerifySecretPhrase() {
     'lighthouse'
   ]);
 
-  const removePhrases = (phraseValue)=>{
-    const filteredPhrases = phrases.filter((data)=>data!=phraseValue);
+  const removePhrases = (phraseValue) => {
+    const filteredPhrases = phrases.filter((data) => data != phraseValue);
     setPhrases(filteredPhrases);
-  }
+  };
 
   const [selectedPhrases, setSelectedPhrases] = useState([]);
 
@@ -39,15 +39,14 @@ export default function VerifySecretPhrase() {
     setSelectedPhrases([...selectedPhrases, phrase]);
   };
 
-  const removeSelectedPhrases = (phraseValue)=>{
-    const filteredPhrases = selectedPhrases.filter((data)=>data!=phraseValue);
+  const removeSelectedPhrases = (phraseValue) => {
+    const filteredPhrases = selectedPhrases.filter((data) => data != phraseValue);
     setSelectedPhrases(filteredPhrases);
-  }
+  };
 
-  const pushPhrase = (phraseValue)=>{
+  const pushPhrase = (phraseValue) => {
     setPhrases([...phrases, phraseValue]);
-  }
-
+  };
 
   return (
     <Screen
@@ -69,13 +68,22 @@ export default function VerifySecretPhrase() {
             marginTop: 35
           }}
         >
-          <SeedPhraseWrapper phrases={selectedPhrases} onPhrasePress={pushPhrase} removeSelectedPhrases={removeSelectedPhrases} />
+          <SeedPhraseWrapper
+            phrases={selectedPhrases}
+            onPhrasePress={pushPhrase}
+            removeSelectedPhrases={removeSelectedPhrases}
+          />
         </View>
         <View style={{ flex: 1 }}>
-          <SeedPhraseWrapper phrases={phrases} noIndex onPhrasePress={pushSelectedPhrase} removeSelectedPhrases={removePhrases} />
+          <SeedPhraseWrapper
+            phrases={phrases}
+            noIndex
+            onPhrasePress={pushSelectedPhrase}
+            removeSelectedPhrases={removePhrases}
+          />
         </View>
         <View style={{ marginVertical: 30, flex: 1, justifyContent: 'flex-end' }}>
-          <VButton textual={theme.mode === 'dark'} label="Continue" />
+          <VButton textual={theme.mode === 'dark'} label="Continue" disabled={selectedPhrases.length != 12} />
         </View>
       </View>
     </Screen>
