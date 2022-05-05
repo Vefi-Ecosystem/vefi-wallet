@@ -24,6 +24,7 @@ export default function VText({
   padded,
   button,
   font,
+  style,
   ...props
 }) {
   return (
@@ -46,7 +47,8 @@ export default function VText({
         bold && styles.bold,
         {
           fontFamily: font ? font : 'GilroyMedium'
-        }
+        },
+        style
       ]}
       {...props}
     >

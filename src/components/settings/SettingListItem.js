@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
 import { useTheme } from '../../contexts/theme';
 import VText from '../common/VText';
@@ -15,22 +15,29 @@ export default function SettingListItem({ onPress, item }) {
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: 5,
-        marginVertical: 15
+        marginVertical: 10
       }}
     >
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <View
           style={{
             marginRight: 15,
-            height: 40,
-            borderRadius: 20,
-            width: 40,
-            backgroundColor: item.color
+            height: 42,
+            borderRadius: 25,
+            width: 42,
+            backgroundColor: item.color,
+            justifyContent: 'center',
+            alignItems: 'center'
           }}
-        ></View>
-        <VText grey>{item.title}</VText>
+        >
+          <Image source={item.icon} style={{ height: 20, width: 20, resizeMode: 'contain' }} />
+        </View>
+        <VText white={theme.mode === 'dark'} black={theme.mode === 'light'}>
+          {item.title}
+        </VText>
       </View>
-      <View>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        {item.label && <VText grey>{item.label}</VText>}
         <VIcon name="chevron-forward" />
       </View>
     </TouchableOpacity>

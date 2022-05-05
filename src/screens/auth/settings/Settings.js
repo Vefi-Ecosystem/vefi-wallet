@@ -11,20 +11,20 @@ export default function Settings() {
   const settings = [
     {
       title: 'Wallets',
-      icon: 'wallet',
+      icon: require('../../../../assets/icons/settings/wallets.png'),
       link: 'wallets',
       color: '#FDF0E7',
       label: 'Main Wallet'
     },
     {
       title: 'Security',
-      icon: 'security',
+      icon: require('../../../../assets/icons/settings/security.png'),
       link: 'security',
       color: '#E6E6E6'
     },
     {
       title: 'Push Notifications',
-      icon: 'notifications',
+      icon: require('../../../../assets/icons/settings/notifications.png'),
       link: 'notifications',
       color: '#FEE7F5'
     },
