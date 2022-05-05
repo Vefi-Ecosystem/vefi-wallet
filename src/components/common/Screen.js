@@ -1,20 +1,26 @@
-import { Text, View } from 'react-native';
+import styled from 'styled-components/native';
 import React from 'react';
 import Constants from 'expo-constants';
+import BackButton from '../Button/BackButton';
 
-export default function Screen({ children, styles }) {
+const StyledView = styled.View`
+  background-color: ${(props) => props.theme.appBg};
+`;
+
+export default function Screen({ children, styles, backButtonShown, backButtonLabel, backButtonOnPress }) {
   return (
-    <View
+    <StyledView
       style={[
         {
           flex: 1,
-          paddingTop: Constants.statusBarHeight + 10,
+          paddingTop: Constants.statusBarHeight,
           paddingHorizontal: 20
         },
         styles
       ]}
     >
+      {backButtonShown && <BackButton label={backButtonLabel} />}
       {children}
-    </View>
+    </StyledView>
   );
 }
