@@ -4,7 +4,7 @@ import Screen from '../../components/common/Screen';
 
 export default function SecretPhrase() {
   return (
-    <Screen backButtonShown>
+    <Screen backButtonShown title="Your Secret Phrase">
       <Text>SecretPhrase</Text>
     </Screen>
   );

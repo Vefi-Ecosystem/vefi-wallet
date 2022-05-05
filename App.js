@@ -14,8 +14,8 @@ export default function App() {
     SfSemiBold: require('./assets/fonts/SfUiSemiBold.ttf'),
     GilroySemiBold: require('./assets/fonts/GilroySemiBold.ttf'),
     GilroyMedium: require('./assets/fonts/GilroyMedium.ttf'),
-    Poppins_600SemiBold,
-    Roboto_500Medium
+    PoppinsSemiBold: Poppins_600SemiBold,
+    RobotoMedium: Roboto_500Medium
   });
 
   return !fontsLoaded ? (
