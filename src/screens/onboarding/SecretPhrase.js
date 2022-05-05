@@ -6,6 +6,7 @@ import { useTheme } from '../../contexts/theme';
 import SeedPhraseWrapper from '../../components/onboarding/SeedPhraseWrapper';
 import VText from '../../components/common/VText';
 import * as Clipboard from 'expo-clipboard';
+import VIcon from '../../components/common/VIcon';
 
 export default function SecretPhrase() {
   const [copiedText, setCopiedText] = React.useState('');
@@ -48,6 +49,17 @@ export default function SecretPhrase() {
           </TouchableOpacity>
         </View>
         <View style={{ marginVertical: 30 }}>
+          <View
+            style={{
+              alignItems: 'center',
+              marginVertical: 10
+            }}
+          >
+            <VIcon name="alert-circle-outline" color="orange" />
+            <VText orange small centered>
+              Never share your recovery phrase with anyone, store it securely!
+            </VText>
+          </View>
           <VButton textual={theme.mode === 'dark'} label="Continue" />
         </View>
       </View>

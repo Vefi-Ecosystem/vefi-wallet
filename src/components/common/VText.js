@@ -15,6 +15,7 @@ export default function VText({
   grey,
   primary,
   blue,
+  orange,
   deepBlue,
   red,
   green,
@@ -48,6 +49,7 @@ export default function VText({
         white && styles.white,
         black && styles.black,
         deepBlue && styles.deepBlue,
+        orange && styles.orange,
         bold && styles.bold,
         {
           fontFamily: font ? font : 'GilroyMedium'
@@ -76,9 +78,13 @@ const styles = StyleSheet.create({
   grey: {
     color: colors.darkgrey
   },
+  orange: {
+    color: colors.orange
+  },
   blue: {
     color: colors.blue
   },
+
   deepBlue: {
     color: colors.deepBlue
   },

@@ -9,7 +9,7 @@ export default function VIcon({ name, size, style, color }) {
   return (
     <Ionicons
       name={name}
-      color={theme.mode === 'dark' ? colors.lightGrey : colors.darkgrey}
+      color={color ? colors[color] : theme.mode === 'dark' ? colors.lightGrey : colors.darkgrey}
       size={size ?? 25}
       style={[styles.icons, style]}
     />
