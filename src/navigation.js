@@ -7,6 +7,9 @@ import WalletBackup from './screens/onboarding/WalletBackup';
 import Settings from './screens/auth/settings/Settings';
 import SecretPhrase from './screens/onboarding/SecretPhrase';
 import VerifySecretPhrase from './screens/onboarding/VerifySecretPhrase';
+import Legal1And2 from './screens/Legal1And2';
+import PassCodeEntry1 from './screens/PassCodeEntry1';
+import CodeEntry from './screens/CodeEntry';
 
 const { Group, Navigator, Screen } = createNativeStackNavigator();
 
@@ -18,6 +21,9 @@ const Navigation = () => {
           {/* {Onboarding} */}
 
           <Screen name="onboarding" component={Onboarding} />
+          <Screen name="legal1And2" component={Legal1And2} />
+          <Screen name="codeEntry" component={CodeEntry} />
+          <Screen name="passCodeEntry1" component={PassCodeEntry1} />
           <Screen name="walletBackup" component={WalletBackup} />
           <Screen name="notifications" component={EnableNotifications} />
           <Screen name="secretPhrase" component={SecretPhrase} />
