@@ -13,7 +13,7 @@ export default function VerifySecretPhrase() {
   const copyToClipboard = () => {
     Clipboard.setString(phrases.toString());
   };
-  const phrases = [
+  const [phrases,setPhrases] = useState([
     'cave',
     'stomach',
     'dog',
@@ -26,13 +26,29 @@ export default function VerifySecretPhrase() {
     'father',
     'terror',
     'lighthouse'
-  ];
+  ]);
+
+  const removePhrases = (phraseValue)=>{
+    const filteredPhrases = phrases.filter((data)=>data!=phraseValue);
+    setPhrases(filteredPhrases);
+  }
 
   const [selectedPhrases, setSelectedPhrases] = useState([]);
 
-  const pushPhrase = (phrase) => {
+  const pushSelectedPhrase = (phrase) => {
     setSelectedPhrases([...selectedPhrases, phrase]);
   };
+
+  const removeSelectedPhrases = (phraseValue)=>{
+    const filteredPhrases = selectedPhrases.filter((data)=>data!=phraseValue);
+    setSelectedPhrases(filteredPhrases);
+  }
+
+  const pushPhrase = (phraseValue)=>{
+    setPhrases([...phrases, phraseValue]);
+  }
+
+
   return (
     <Screen
       backButtonShown
@@ -53,10 +69,10 @@ export default function VerifySecretPhrase() {
             marginTop: 35
           }}
         >
-          <SeedPhraseWrapper phrases={selectedPhrases} />
+          <SeedPhraseWrapper phrases={selectedPhrases} onPhrasePress={pushPhrase} removeSelectedPhrases={removeSelectedPhrases} />
         </View>
         <View style={{ flex: 1 }}>
-          <SeedPhraseWrapper phrases={phrases} noIndex onPhrasePress={() => pushPhrase('word')} />
+          <SeedPhraseWrapper phrases={phrases} noIndex onPhrasePress={pushSelectedPhrase} removeSelectedPhrases={removePhrases} />
         </View>
         <View style={{ marginVertical: 30, flex: 1, justifyContent: 'flex-end' }}>
           <VButton textual={theme.mode === 'dark'} label="Continue" />

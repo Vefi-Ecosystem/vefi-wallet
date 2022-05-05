@@ -25,7 +25,7 @@ export default function SeedPhrase({ phrase, index, onPress }) {
     >
       {index && (
         <VText grey small>
-          {index}
+          {index}.
         </VText>
       )}
       <VText white={theme.mode === 'dark'} deepBlue={theme.mode === 'light'} small>
