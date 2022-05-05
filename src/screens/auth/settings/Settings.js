@@ -30,39 +30,60 @@ export default function Settings() {
     },
     {
       title: 'Preferences',
-      icon: 'preferences',
+      icon: require('../../../../assets/icons/settings/preferences.png'),
       link: 'preferences',
       color: '#4CC99030'
     },
     {
       title: 'Price Alerts',
-      icon: 'price-alerts',
+      icon: require('../../../../assets/icons/settings/price-alerts.png'),
       link: 'priceAlerts',
       color: '#FBE8ED'
     },
     {
       title: 'Wallet Connect',
-      icon: 'wallet-connect',
+      icon: require('../../../../assets/icons/settings/wallet-connect.png'),
       link: 'walletConnect',
       color: '#E5EFFD'
     },
     {
       title: 'Help & Support',
-      icon: 'help-support',
+      icon: require('../../../../assets/icons/settings/help-support.png'),
       link: 'helpSupport',
-      color: '#F03D3E4D'
+      color: '#F03D3E30'
     }
   ];
   return (
     <Screen>
-      <VText white={theme.mode === 'dark'} black={theme.mode === 'light'} centered medium font="GilroySemiBold">
-        Settings
-      </VText>
-
       <FlatList
+        ListHeaderComponent={
+          <VText white={theme.mode === 'dark'} black={theme.mode === 'light'} centered medium font="GilroySemiBold">
+            Settings
+          </VText>
+        }
         data={settings}
         keyExtractor={(item) => item.title}
         renderItem={({ item }) => <SettingListItem item={item} />}
+        ListFooterComponent={
+          <View style={{ marginVertical: 10 }}>
+            <VText grey> JOIN COMMUNITY</VText>
+            <SettingListItem
+              item={{
+                title: 'Facebook',
+                color: '#3B5998E6',
+                icon: require('../../../../assets/icons/settings/facebook.png'),
+                link: 'facebook'
+              }}
+            />
+            <SettingListItem
+              item={{
+                title: 'Instagram',
+                color: '#C13584#6',
+                icon: require('../../../../assets/icons/settings/instagram.png')
+              }}
+            />
+          </View>
+        }
       />
     </Screen>
   );

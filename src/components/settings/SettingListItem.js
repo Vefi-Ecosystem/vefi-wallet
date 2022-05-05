@@ -32,9 +32,7 @@ export default function SettingListItem({ onPress, item }) {
         >
           <Image source={item.icon} style={{ height: 20, width: 20, resizeMode: 'contain' }} />
         </View>
-        <VText white={theme.mode === 'dark'} black={theme.mode === 'light'}>
-          {item.title}
-        </VText>
+        <VText grey>{item.title}</VText>
       </View>
       <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         {item.label && <VText grey>{item.label}</VText>}
