@@ -2,21 +2,8 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import SeedPhrase from './SeedPhrase';
 
-export default function SeedPhraseWrapper() {
-  const phrases = [
-    'cave',
-    'stomach',
-    'dog',
-    'apple',
-    'twister',
-    'absent',
-    'kingsley',
-    'bald',
-    'tourette',
-    'father',
-    'terror',
-    'lighthouse'
-  ];
+export default function SeedPhraseWrapper({phrases}) {
+  
   return (
     <View
       style={{

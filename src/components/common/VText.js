@@ -14,6 +14,7 @@ export default function VText({
   small,
   grey,
   primary,
+  blue,
   deepBlue,
   red,
   green,
@@ -37,6 +38,7 @@ export default function VText({
         title && styles.title,
         small && styles.small,
         grey && styles.grey,
+        blue && styles.blue,
         red && styles.red,
         green && styles.green,
         primary && styles.primary,
@@ -73,6 +75,9 @@ const styles = StyleSheet.create({
   },
   grey: {
     color: colors.darkgrey
+  },
+  blue: {
+    color: colors.blue
   },
   deepBlue: {
     color: colors.deepBlue
