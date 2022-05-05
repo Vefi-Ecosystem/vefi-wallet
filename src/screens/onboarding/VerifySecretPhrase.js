@@ -1,52 +1,38 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
+import { View } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import Screen from '../../components/common/Screen';
 import VButton from '../../components/Button/Button';
 import { useTheme } from '../../contexts/theme';
 import SeedPhraseWrapper from '../../components/onboarding/SeedPhraseWrapper';
-
-import * as Clipboard from 'expo-clipboard';
+import { useSelector } from 'react-redux';
+import _ from 'lodash';
 
 export default function VerifySecretPhrase() {
-  const [copiedText, setCopiedText] = React.useState('');
   const theme = useTheme();
-  const copyToClipboard = () => {
-    Clipboard.setString(phrases.toString());
-  };
-  const [phrases, setPhrases] = useState([
-    'cave',
-    'stomach',
-    'dog',
-    'apple',
-    'twister',
-    'absent',
-    'kingsley',
-    'bald',
-    'tourette',
-    'father',
-    'terror',
-    'lighthouse'
-  ]);
+  const [unshuffled, setUnshuffled] = useState([]);
+  const [shuffled, setShuffled] = useState([]);
+  const [pickedKeys, setPickedKeys] = useState([]);
+  const [targetIndex, setTargetIndex] = useState(0);
+  const { phrase } = useSelector((state) => state.phraseReducer);
 
-  const removePhrases = (phraseValue) => {
-    const filteredPhrases = phrases.filter((data) => data != phraseValue);
-    setPhrases(filteredPhrases);
-  };
+  const addKeyToPickedList = (index) => setPickedKeys((keys) => [...keys, index]);
 
-  const [selectedPhrases, setSelectedPhrases] = useState([]);
+  useEffect(() => {
+    if (!!phrase || phrase !== null) setUnshuffled(_.split(phrase, ' '));
+  }, [phrase]);
 
-  const pushSelectedPhrase = (phrase) => {
-    setSelectedPhrases([...selectedPhrases, phrase]);
-  };
+  useEffect(() => {
+    if (unshuffled.length > 0)
+      setShuffled(
+        _.map(unshuffled, (value) => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value)
+      );
+  }, [unshuffled]);
 
-  const removeSelectedPhrases = (phraseValue) => {
-    const filteredPhrases = selectedPhrases.filter((data) => data != phraseValue);
-    setSelectedPhrases(filteredPhrases);
-  };
-
-  const pushPhrase = (phraseValue) => {
-    setPhrases([...phrases, phraseValue]);
-  };
+  useEffect(() => {
+    return () => setPickedKeys([]);
+  }, []);
 
   return (
     <Screen
@@ -65,29 +51,40 @@ export default function VerifySecretPhrase() {
             flex: 1,
             backgroundColor: '#ACB5BD80',
             marginHorizontal: -20,
-            marginTop: 35
+            marginTop: 35,
+            paddingVertical: 4
           }}
         >
           <SeedPhraseWrapper
-            phrases={selectedPhrases}
-            onPhrasePress={pushPhrase}
-            removeSelectedPhrases={removeSelectedPhrases}
+            phrases={_.map(pickedKeys, (key) => unshuffled[key])}
+            onPhrasePress={() => {}}
+            removeSelectedPhrases={() => {}}
           />
         </View>
         <View style={{ flex: 1 }}>
           <SeedPhraseWrapper
-            phrases={phrases}
+            phrases={shuffled}
             noIndex
-            onPhrasePress={pushSelectedPhrase}
-            removeSelectedPhrases={removePhrases}
+            onPhrasePress={(phrase) => {
+              if (unshuffled[targetIndex] === phrase) {
+                addKeyToPickedList(targetIndex);
+                setShuffled(shuffled.filter((val, index) => index !== shuffled.findIndex((item) => item === phrase)));
+                if (targetIndex < unshuffled.length - 1) {
+                  setTargetIndex(targetIndex + 1);
+                }
+              } else {
+                console.log('Wrong!');
+              }
+            }}
+            removeSelectedPhrases={() => {}}
           />
         </View>
         <View style={{ marginVertical: 30, flex: 1, justifyContent: 'flex-end' }}>
-          <VButton textual={theme.mode === 'dark'} label="Continue" disabled={selectedPhrases.length != 12} />
+          <VButton textual={theme.mode === 'dark'} label="Continue" disabled={pickedKeys.length != 12} />
         </View>
       </View>
     </Screen>
   );
 }
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});

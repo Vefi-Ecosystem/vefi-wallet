@@ -6,7 +6,7 @@ import VButton2 from '../../components/Button/Button2';
 import VButton from '../../components/Button/Button';
 import { useTheme } from '../../contexts/theme';
 
-export default function Onboarding({navigation}) {
+export default function Onboarding({ navigation }) {
   const theme = useTheme();
 
   return (
@@ -41,7 +41,13 @@ export default function Onboarding({navigation}) {
           </VText>
         </View>
         <View style={{ marginVertical: 30 }}>
-          <VButton2 onPress={()=>{navigation.navigate('legal1And2')}} textual={theme.mode === 'dark'} label="Create new account" />
+          <VButton2
+            onPress={() => {
+              navigation.navigate('legal1And2');
+            }}
+            textual={theme.mode === 'dark'}
+            label="Create new account"
+          />
           <VButton textual={theme.mode === 'light'} transparent label="I already have an account" />
         </View>
       </View>
