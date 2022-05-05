@@ -56,7 +56,7 @@ export default function SecretPhrase() {
             }}
           >
             <VIcon name="alert-circle-outline" color="orange" />
-            <VText orange small centered>
+            <VText orange small centered font="Sf">
               Never share your recovery phrase with anyone, store it securely!
             </VText>
           </View>
