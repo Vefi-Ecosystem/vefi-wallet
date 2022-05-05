@@ -3,6 +3,7 @@ import React from 'react';
 import Screen from '../../components/common/Screen';
 import VButton from '../../components/Button/Button';
 import { useTheme } from '../../contexts/theme';
+import SeedPhraseWrapper from '../../components/onboarding/SeedPhraseWrapper';
 
 export default function SecretPhrase() {
   const theme = useTheme();
@@ -18,7 +19,9 @@ export default function SecretPhrase() {
           justifyContent: 'space-between'
         }}
       >
-        <View></View>
+        <View>
+          <SeedPhraseWrapper />
+        </View>
         <View style={{ marginVertical: 30 }}>
           <VButton textual={theme.mode === 'dark'} label="Continue" />
         </View>

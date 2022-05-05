@@ -14,6 +14,7 @@ export default function VText({
   small,
   grey,
   primary,
+  deepBlue,
   red,
   green,
   left,
@@ -44,6 +45,7 @@ export default function VText({
         left && styles.left,
         white && styles.white,
         black && styles.black,
+        deepBlue && styles.deepBlue,
         bold && styles.bold,
         {
           fontFamily: font ? font : 'GilroyMedium'
@@ -61,7 +63,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Sf',
     fontSize: 16,
-    marginVertical: 1
+    margin: 1
   },
   white: {
     color: colors.white
@@ -71,6 +73,9 @@ const styles = StyleSheet.create({
   },
   grey: {
     color: colors.darkgrey
+  },
+  deepBlue: {
+    color: colors.deepBlue
   },
   button: {
     fontFamily: 'SfSemiBold',

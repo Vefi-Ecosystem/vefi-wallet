@@ -38,7 +38,7 @@ export default function Screen({
             marginVertical: 10
           }}
         >
-          <VText white={theme.mode === 'dark'} black={theme.mode === 'light'} font="PoppinsSemiBold" medium centered>
+          <VText white={theme.mode === 'dark'} deepBlue={theme.mode === 'light'} font="PoppinsSemiBold" medium centered>
             {title}
           </VText>
         </View>
