@@ -11,6 +11,7 @@ export default function SeedPhrase({ phrase, index, onPress }) {
       style={{
         borderRadius: 8,
         borderWidth: 1,
+        backgroundColor: '#fff',
         borderColor: '#8D9DA9',
         paddingVertical: 5,
         paddingHorizontal: 4,
@@ -20,6 +21,7 @@ export default function SeedPhrase({ phrase, index, onPress }) {
         // width: width,
         flexDirection: 'row'
       }}
+      onPress={onPress}
     >
       {index && (
         <VText grey small>

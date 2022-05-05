@@ -2,7 +2,7 @@ import { View, Text } from 'react-native';
 import React from 'react';
 import SeedPhrase from './SeedPhrase';
 
-export default function SeedPhraseWrapper({ phrases, noIndex }) {
+export default function SeedPhraseWrapper({ phrases, noIndex, onPhrasePress }) {
   return (
     <View
       style={{
@@ -13,7 +13,7 @@ export default function SeedPhraseWrapper({ phrases, noIndex }) {
       }}
     >
       {phrases.map((phrase, index) => (
-        <SeedPhrase phrase={phrase} index={!noIndex && index + 1} />
+        <SeedPhrase key={index} phrase={phrase} index={!noIndex && index + 1} onPress={onPhrasePress} />
       ))}
     </View>
   );

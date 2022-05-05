@@ -4,9 +4,8 @@ import Screen from '../../components/common/Screen';
 import VButton from '../../components/Button/Button';
 import { useTheme } from '../../contexts/theme';
 import SeedPhraseWrapper from '../../components/onboarding/SeedPhraseWrapper';
-import VText from '../../components/common/VText';
+
 import * as Clipboard from 'expo-clipboard';
-import VIcon from '../../components/common/VIcon';
 
 export default function VerifySecretPhrase() {
   const [copiedText, setCopiedText] = React.useState('');
@@ -28,6 +27,12 @@ export default function VerifySecretPhrase() {
     'terror',
     'lighthouse'
   ];
+
+  const [selectedPhrases, setSelectedPhrases] = useState([]);
+
+  const pushPhrase = (phrase) => {
+    setSelectedPhrases([...selectedPhrases, phrase]);
+  };
   return (
     <Screen
       backButtonShown
@@ -43,13 +48,15 @@ export default function VerifySecretPhrase() {
         <View
           style={{
             flex: 1,
-            backgroundColor: '#ACB5BD990',
+            backgroundColor: '#ACB5BD80',
             marginHorizontal: -20,
             marginTop: 35
           }}
-        ></View>
+        >
+          <SeedPhraseWrapper phrases={selectedPhrases} />
+        </View>
         <View style={{ flex: 1 }}>
-          <SeedPhraseWrapper phrases={phrases} noIndex />
+          <SeedPhraseWrapper phrases={phrases} noIndex onPhrasePress={() => pushPhrase('word')} />
         </View>
         <View style={{ marginVertical: 30, flex: 1, justifyContent: 'flex-end' }}>
           <VButton textual={theme.mode === 'dark'} label="Continue" />
