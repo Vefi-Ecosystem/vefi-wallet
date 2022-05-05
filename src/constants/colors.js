@@ -2,6 +2,7 @@ export const black = '#000';
 export const white = '#ffffff';
 export const blue = '#105DCF';
 export const green = '#4FD09E';
+export const orange = '#D84910';
 export const lightGrey = '#ACB5BD';
 export const paragraph = '#ACB5BD';
 export const bodyText = '#495057';
