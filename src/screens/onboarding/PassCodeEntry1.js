@@ -1,10 +1,10 @@
  import React from 'react'
  import styled from 'styled-components/native';
- import Screen from '../components/common/Screen';
- import { MainSubContainer, TopContainer,BottomContainer } from '../components/common/CommonStyles';
-import VButton2 from '../components/Button/Button2';
-import VText from '../components/common/VText';
-import { useTheme } from '../contexts/theme';
+ import Screen from '../../components/common/Screen';
+ import { MainSubContainer, TopContainer,BottomContainer } from '../..//components/common/CommonStyles';
+import VButton2 from '../../components/Button/Button2';
+import VText from '../../components/common/VText';
+import { useTheme } from '../../contexts/theme';
 
 const StyledLockImage = styled.Image`
  width: 154px;
@@ -37,7 +37,7 @@ color: ${props => props.lightMode ? "#495057" : "#757575"};
      <Screen>
          <MainSubContainer>
              <TopContainer>
-                 <StyledLockImage source={theme.mode=='light'?require("../../assets/images/Lock.png"):require("../../assets/images/LockDark.png")}/>
+                 <StyledLockImage source={theme.mode=='light'?require("../../../assets/images/Lock.png"):require("../../../assets/images/LockDark.png")}/>
                  
                  <VText font="GilroySemiBold" white={theme.mode === 'dark'} black={theme.mode === 'light'}>Let's secure your account</VText>
                  <ProtectView >

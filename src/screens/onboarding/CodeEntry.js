@@ -1,11 +1,11 @@
 import React,{useState} from 'react'
 import styled from 'styled-components/native';
-import Screen from '../components/common/Screen';
+import Screen from '../../components/common/Screen';
 import { View} from 'react-native';
-import { MainSubContainer, TopContainer,BottomContainer } from '../components/common/CommonStyles';
-import VButton2 from '../components/Button/Button2';
-import VText from '../components/common/VText';
-import { useTheme } from '../contexts/theme';
+import { MainSubContainer, TopContainer,BottomContainer } from '../../components/common/CommonStyles';
+import VButton2 from '../../components/Button/Button2';
+import VText from '../../components/common/VText';
+import { useTheme } from '../../contexts/theme';
 
 
 const ProtectView = styled.View`

@@ -7,16 +7,16 @@ import WalletBackup from './screens/onboarding/WalletBackup';
 import Settings from './screens/auth/settings/Settings';
 import SecretPhrase from './screens/onboarding/SecretPhrase';
 import VerifySecretPhrase from './screens/onboarding/VerifySecretPhrase';
-import Legal1And2 from './screens/Legal1And2';
-import PassCodeEntry1 from './screens/PassCodeEntry1';
-import CodeEntry from './screens/CodeEntry';
+import Legal1And2 from './screens/onboarding/Legal1And2';
+import PassCodeEntry1 from './screens/onboarding/PassCodeEntry1';
+import CodeEntry from './screens/onboarding/CodeEntry';
 
 const { Group, Navigator, Screen } = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="verifySecretPhrase">
+      <Navigator initialRouteName="onboarding">
         <Group screenOptions={{ headerShown: false }}>
           {/* {Onboarding} */}
           <Screen name="onboarding" component={Onboarding} />
