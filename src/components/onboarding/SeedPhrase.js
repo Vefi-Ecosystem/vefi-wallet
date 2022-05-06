@@ -1,8 +1,7 @@
-import { View, Dimensions, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import React from 'react';
 import VText from '../common/VText';
 import { useTheme } from '../../contexts/theme';
-const width = Dimensions.get('screen').width / 4.2;
 
 export default function SeedPhrase({ phrase, index, onPress }) {
   const theme = useTheme();
