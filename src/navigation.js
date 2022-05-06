@@ -18,16 +18,17 @@ const { Group, Navigator, Screen } = createNativeStackNavigator();
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Navigator initialRouteName="gradient">
+      <Navigator>
         <Group screenOptions={{ headerShown: false }}>
           {/* {Onboarding} */}
+       
+          <Screen name="secretPhrase" component={SecretPhrase} />
+          <Screen name="passCodeEntry1" component={PassCodeEntry1} />
           <Screen name="onboarding" component={Onboarding} />
           <Screen name="legal1And2" component={Legal1And2} />
           <Screen name="codeEntry" component={CodeEntry} />
-          <Screen name="passCodeEntry1" component={PassCodeEntry1} />
           <Screen name="walletBackup" component={WalletBackup} />
           <Screen name="notifications" component={EnableNotifications} />
-          <Screen name="secretPhrase" component={SecretPhrase} />
           <Screen name="verifySecretPhrase" component={VerifySecretPhrase} />
 
           {/* SETTINGS */}

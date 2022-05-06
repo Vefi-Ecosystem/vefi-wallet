@@ -1,5 +1,8 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import React, { useState } from 'react';
+import { TouchableOpacity, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import _ from 'lodash';
+import { generateMnemonic } from '../../states/phrase';
 import Screen from '../../components/common/Screen';
 import VButton from '../../components/Button/Button';
 import { useTheme } from '../../contexts/theme';
@@ -8,26 +11,19 @@ import VText from '../../components/common/VText';
 import * as Clipboard from 'expo-clipboard';
 import VIcon from '../../components/common/VIcon';
 
-export default function SecretPhrase() {
-  const [copiedText, setCopiedText] = React.useState('');
+export default function SecretPhrase({ navigation }) {
   const theme = useTheme();
+  const { phrase } = useSelector((state) => state.phraseReducer);
+  const dispatch = useDispatch();
+
   const copyToClipboard = () => {
-    Clipboard.setString(phrases.toString());
+    Clipboard.setString(phrase);
   };
-  const phrases  =[
-    'cave',
-    'stomach',
-    'dog',
-    'apple',
-    'twister',
-    'absent',
-    'kingsley',
-    'bald',
-    'tourette',
-    'father',
-    'terror',
-    'lighthouse'
-  ];
+
+  useEffect(() => {
+    dispatch(generateMnemonic(undefined));
+  }, []);
+
   return (
     <Screen
       backButtonShown
@@ -41,7 +37,11 @@ export default function SecretPhrase() {
         }}
       >
         <View>
-          <SeedPhraseWrapper phrases={phrases} onPhrasePress={()=>{}} removeSelectedPhrases={()=>{}}/>
+          <SeedPhraseWrapper
+            phrases={phrase ? _.split(phrase, ' ') : []}
+            onPhrasePress={() => {}}
+            removeSelectedPhrases={() => {}}
+          />
           <TouchableOpacity onPress={copyToClipboard}>
             <VText blue centered font="Sf">
               Copy
@@ -60,11 +60,13 @@ export default function SecretPhrase() {
               Never share your recovery phrase with anyone, store it securely!
             </VText>
           </View>
-          <VButton textual={theme.mode === 'dark'} label="Continue" />
+          <VButton
+            onPress={() => navigation.replace('verifySecretPhrase')}
+            textual={theme.mode === 'dark'}
+            label="Continue"
+          />
         </View>
       </View>
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({});
