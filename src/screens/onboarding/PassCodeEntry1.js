@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components/native';
-import Screen from '../components/common/Screen';
-import { MainSubContainer, TopContainer, BottomContainer } from '../components/common/CommonStyles';
-import VButton2 from '../components/Button/Button2';
-import VText from '../components/common/VText';
-import { useTheme } from '../contexts/theme';
+ import React from 'react'
+ import styled from 'styled-components/native';
+ import Screen from '../../components/common/Screen';
+ import { MainSubContainer, TopContainer,BottomContainer } from '../..//components/common/CommonStyles';
+import VButton2 from '../../components/Button/Button2';
+import VText from '../../components/common/VText';
+import { useTheme } from '../../contexts/theme';
 
 const StyledLockImage = styled.Image`
   width: 154px;
@@ -36,8 +36,8 @@ export default function PassCodeEntry1({ navigation }) {
           <StyledLockImage
             source={
               theme.mode == 'light'
-                ? require('../../assets/images/Lock.png')
-                : require('../../assets/images/LockDark.png')
+                ? require('../../../assets/images/Lock.png')
+                : require('../../../assets/images/LockDark.png')
             }
           />
 

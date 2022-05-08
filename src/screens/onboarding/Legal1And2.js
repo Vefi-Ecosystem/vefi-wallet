@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/native';
-import Screen from '../components/common/Screen';
-import { View, Text, TouchableOpacity } from 'react-native';
+import Screen from '../../components/common/Screen';
+import { View,Text,TouchableOpacity} from 'react-native';
 import Checkbox from 'expo-checkbox';
-import VText from '../components/common/VText';
-import VIcon from '../components/common/VIcon';
-import { MainSubContainer, TopContainer, BottomContainer } from '../components/common/CommonStyles';
-import { useTheme } from '../contexts/theme';
-import VButton2 from '../components/Button/Button2';
+import VText from '../../components/common/VText';
+import VIcon from '../../components/common/VIcon';
+import { MainSubContainer, TopContainer,BottomContainer } from '../../components/common/CommonStyles';
+import { useTheme } from '../../contexts/theme';
+import VButton2 from '../../components/Button/Button2';
 
 const Title = styled.View`
   width: 100%;
