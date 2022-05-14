@@ -16,7 +16,7 @@ export const ThemeContextProvider = ({ children }) => {
   return (
     <ThemeContext.Provider value={{ mode: theme, setMode }}>
       <ThemeProvider theme={theme === 'dark' ? themes.dark : themes.light}>
-        <StatusBar style='light' />
+        <StatusBar style="light" />
         {children}
       </ThemeProvider>
     </ThemeContext.Provider>

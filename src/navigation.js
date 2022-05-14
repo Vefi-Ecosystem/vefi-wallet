@@ -16,11 +16,13 @@ import VIcon from './components/common/VIcon';
 import * as colors from './constants/colors';
 import { Image } from 'react-native';
 import TabIcon from './components/common/TabIcon';
+import { useTheme } from './contexts/theme';
 
 const { Group, Navigator, Screen } = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const Tabs = () => {
+  const theme = useTheme();
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -31,9 +33,13 @@ const Tabs = () => {
         tabBarLabelStyle: {
           fontFamily: 'Sf'
         },
+        tabBarStyle: {
+          backgroundColor: theme.mode == 'dark' ? colors.appBGDark : colors.white,
+          borderTopWidth: 0
+        },
         indicatorStyle: {
           height: 0,
-          backgroundColor: 'transparent'
+          backgroundColor: 'pink'
         }
       }}
     >
