@@ -30,7 +30,7 @@ export default function VButton({ label, transparent, icon, disabled, onPress, o
       )}
       <VText
         white={!outlined && theme.mode === 'dark'}
-        black={textual && theme.mode === 'light'}
+        black={textual || theme.mode === 'light'}
         button
         font={textual ? 'GilroyMedium' : 'SfSemiBold'}
       >

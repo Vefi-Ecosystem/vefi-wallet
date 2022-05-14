@@ -28,7 +28,7 @@ export default function SeedPhrase({ phrase, index, onPress }) {
           {index}.
         </VText>
       )}
-      <VText white={theme.mode === 'dark'} deepBlue={theme.mode === 'light'} small>
+      <VText deepBlue small>
         {phrase}
       </VText>
     </TouchableOpacity>
