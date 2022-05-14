@@ -12,7 +12,7 @@ import VerifySecretPhrase from './screens/onboarding/VerifySecretPhrase';
 import Legal1And2 from './screens/Legal1And2';
 import PassCodeEntry1 from './screens/PassCodeEntry1';
 import CodeEntry from './screens/CodeEntry';
-import VIcon from './components/common/VIcon';
+
 import * as colors from './constants/colors';
 import { Image } from 'react-native';
 import TabIcon from './components/common/TabIcon';
@@ -43,13 +43,6 @@ const Tabs = () => {
         }
       }}
     >
-      {/* <Tab.Screen
-        name="Home"
-        component={Onboarding}
-        options={{
-          tabBarIcon: ({ color }) => <VIcon name="home" size={25} color={color} />
-        }}
-      /> */}
       <Tab.Screen
         name="Wallet"
         component={Legal1And2}
@@ -69,7 +62,6 @@ const Tabs = () => {
         component={VerifySecretPhrase}
         options={{
           tabBarIcon: ({ color }) => {
-            console.log(color);
             if (color == '#105DCF') {
               return <Image source={require('../assets/icons/dex.png')} style={{ height: 25, width: 25 }} />;
             } else {
