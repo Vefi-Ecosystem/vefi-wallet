@@ -13,17 +13,17 @@ import CodeEntry from './screens/onboarding/CodeEntry';
 import AddCustomToken from './screens/wallet/AddCustomToken';
 import GradientCard from './components/Card/GradientCard';
 
+import Tabs from './components/Tabs/BottomNavigationTabs';
+
 const { Group, Navigator, Screen } = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Navigator>
+      <Navigator initialRouteName="tabs">
         <Group screenOptions={{ headerShown: false }}>
           {/* {Onboarding} */}
-       
-          <Screen name="secretPhrase" component={SecretPhrase} />
-          <Screen name="passCodeEntry1" component={PassCodeEntry1} />
+          <Screen name="tabs" component={Tabs} />
           <Screen name="onboarding" component={Onboarding} />
           <Screen name="legal1And2" component={Legal1And2} />
           <Screen name="codeEntry" component={CodeEntry} />
@@ -37,7 +37,6 @@ const Navigation = () => {
           {/* WALLET */}
           <Screen name="addCustomToken" component={AddCustomToken} />
           <Screen name="gradient" component={GradientCard} />
-        
         </Group>
       </Navigator>
     </NavigationContainer>
