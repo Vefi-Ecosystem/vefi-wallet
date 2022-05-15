@@ -4,9 +4,10 @@ import { Image } from 'react-native';
 import * as colors from '../../constants/colors';
 import { useTheme } from '../../contexts/theme';
 import Settings from '../../screens/auth/settings/Settings';
-import Legal1And2 from '../../screens/Legal1And2';
+import Legal1And2 from '../../screens/onboarding/Legal1And2';
 import SecretPhrase from '../../screens/onboarding/SecretPhrase';
 import VerifySecretPhrase from '../../screens/onboarding/VerifySecretPhrase';
+
 import TabIcon from '../common/TabIcon';
 const Tab = createBottomTabNavigator();
 const Tabs = () => {
